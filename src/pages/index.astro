@@ -1,0 +1,105 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout>
+  <header class="absolute top-0 left-0 right-0 z-20 text-ivory">
+    <div class="flex items-center justify-between px-6 py-6 md:px-10">
+      <a href="/" class="font-serif text-2xl tracking-[0.28em] text-ivory">HALDEN</a>
+      <nav class="flex gap-8 text-[11px] uppercase tracking-[0.22em] font-light">
+        <a href="#lookbook" class="hover:opacity-70">Lookbook</a>
+        <a href="#house" class="hover:opacity-70">The House</a>
+        <a href="#contact" class="hover:opacity-70">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section aria-label="Autumn twenty-six" class="bg-charcoal">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-[3px]">
+      <figure class="m-0">
+        <img src="/hero-cuff.png" alt="Folding a shirt cuff under a charcoal jacket" class="block h-[92vh] w-full object-cover object-center" />
+      </figure>
+      <figure class="m-0">
+        <img src="/hero-coat.png" alt="Long camel overcoat with a charcoal scarf" class="block h-[92vh] w-full object-cover object-center" />
+      </figure>
+      <figure class="m-0">
+        <img src="/hero-collar.png" alt="Straightening a white shirt collar" class="block h-[92vh] w-full object-cover object-center" />
+      </figure>
+    </div>
+    <p class="py-5 text-center text-[11px] uppercase tracking-[0.32em] text-ivory/80">Autumn twenty-six</p>
+  </section>
+
+  <section id="lookbook" class="px-6 py-24 md:px-10 md:py-32">
+    <div class="mb-14 flex items-end justify-between">
+      <h2 class="font-serif text-4xl md:text-5xl font-medium">Lookbook</h2>
+      <p class="hidden md:block max-w-xs text-right text-[12px] leading-relaxed tracking-wide text-charcoal/70">Four pieces. Nothing extra.</p>
+    </div>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <li>
+        <img src="/look-navy.png" alt="Navy wool two-piece" class="aspect-[3/4] w-full object-cover" />
+        <p class="mt-4 text-[13px]">Navy wool two-piece</p>
+        <p class="mt-1 text-[12px] text-charcoal/60">Super 120s, unlined jacket</p>
+      </li>
+      <li>
+        <img src="/look-camel.png" alt="Camel overcoat" class="aspect-[3/4] w-full object-cover" />
+        <p class="mt-4 text-[13px]">Camel overcoat</p>
+        <p class="mt-1 text-[12px] text-charcoal/60">Wool-cashmere, horn buttons</p>
+      </li>
+      <li>
+        <img src="/look-ivory.png" alt="Ivory merino rollneck" class="aspect-[3/4] w-full object-cover" />
+        <p class="mt-4 text-[13px]">Ivory merino</p>
+        <p class="mt-1 text-[12px] text-charcoal/60">Fine-gauge rollneck</p>
+      </li>
+      <li>
+        <img src="/look-oxfords.png" alt="Black cap-toe oxfords" class="aspect-[3/4] w-full object-cover" />
+        <p class="mt-4 text-[13px]">Cap-toe oxford</p>
+        <p class="mt-1 text-[12px] text-charcoal/60">Black calf, closed lacing</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="house" class="px-6 py-8 md:px-10 md:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 border-t border-charcoal/15 pt-16 md:pt-24">
+      <h2 class="font-serif text-4xl md:text-5xl font-medium md:col-span-4">The House</h2>
+      <div class="md:col-span-7 md:col-start-6 max-w-xl">
+        <p class="text-[17px] leading-[1.7] font-light">HALDEN is a small house for men who dress once and mean it. Cut, cloth, carriage.</p>
+        <p class="mt-6 text-[17px] leading-[1.7] font-light text-charcoal/75">Autumn twenty-six is the first collection we are willing to put a name on.</p>
+      </div>
+    </div>
+  </section>
+
+    <footer id="contact" class="relative mt-24 overflow-hidden bg-charcoal text-ivory">
+    <p class="pointer-events-none select-none absolute inset-x-0 top-4 font-serif text-[18vw] leading-none text-ivory/10 tracking-[0.14em] text-center">HALDEN</p>
+    <svg class="pointer-events-none absolute bottom-8 left-0 w-full h-28 text-ivory/20" viewBox="0 0 1200 140" fill="none" stroke="currentColor" aria-hidden="true">
+      <line x1="48" y1="24" x2="1152" y2="24" stroke-width="1.2" />
+      <path stroke-width="1.2" d="M200 24v18l-28 36h56l-28-36" />
+      <path stroke-width="1.2" d="M400 24v18l-28 36h56l-28-36" />
+      <path stroke-width="1.2" d="M600 24v18l-28 36h56l-28-36" />
+      <path stroke-width="1.2" d="M800 24v18l-28 36h56l-28-36" />
+      <path stroke-width="1.2" d="M1000 24v18l-28 36h56l-28-36" />
+      <path stroke-width="1" d="M172 78v36M228 78v40M372 78v32M428 78v38M572 78v36M628 78v42M772 78v34M828 78v40M972 78v38M1028 78v32" />
+    </svg>
+    <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 px-6 pt-20 pb-32 md:px-10">
+      <a href="#lookbook" class="block">
+        <p class="text-[12px] tracking-[0.18em] uppercase">Lookbook</p>
+        <p class="mt-2 text-[12px] text-ivory/55">The four pieces</p>
+      </a>
+      <a href="#house" class="block">
+        <p class="text-[12px] tracking-[0.18em] uppercase">The House</p>
+        <p class="mt-2 text-[12px] text-ivory/55">Cut, cloth, carriage</p>
+      </a>
+      <div>
+        <p class="text-[12px] tracking-[0.18em] uppercase">Atelier</p>
+        <p class="mt-2 text-[12px] text-ivory/55">By appointment</p>
+      </div>
+      <div>
+        <p class="text-[12px] tracking-[0.18em] uppercase">Contact</p>
+        <p class="mt-2 text-[12px] text-ivory/55">house@halden.co</p>
+      </div>
+    </div>
+    <div class="relative z-10 flex items-center justify-between px-6 py-5 md:px-10 text-[11px] tracking-wide text-ivory/40 border-t border-ivory/10">
+      <p>Copyright 2026 HALDEN</p>
+      <p class="font-serif tracking-[0.28em] text-ivory/70">HALDEN</p>
+    </div>
+  </footer>
+
+</Layout>

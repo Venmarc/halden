@@ -1,2 +1,1 @@
-# halden
-HALDEN — luxury menswear house lookbook. Portfolio piece.
+Luxury menswear house lookbook. Portfolio piece, not a store.
