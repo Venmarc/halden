@@ -1,105 +1,1288 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const rail = [
+  { src: '/rail-jacket.jpg', alt: 'Navy jacket, canvas open', name: 'Jacket', cloth: 'Super 120s', w: 864, h: 1152 },
+  { src: '/rail-shirt.jpg', alt: 'White shirt, collar open', name: 'Shirt', cloth: 'Poplin', w: 864, h: 1152 },
+  { src: '/rail-coat.jpg', alt: 'Camel overcoat', name: 'Coat', cloth: 'Camel hair', w: 864, h: 1152 },
+  { src: '/rail-trousers.jpg', alt: 'Grey trousers, cuffed', name: 'Trousers', cloth: 'Flannel', w: 864, h: 1152 },
+  { src: '/rail-oxford.jpg', alt: 'Black oxford', name: 'Oxford', cloth: 'Calf', w: 691, h: 922 },
+  { src: '/rail-watch.jpg', alt: 'Steel watch, leather strap', name: 'Watch', cloth: 'Steel', w: 864, h: 1152 },
+  { src: '/rail-glasses.jpg', alt: 'Tortoiseshell glasses', name: 'Glasses', cloth: 'Acetate', w: 864, h: 1152 },
+];
 ---
 <Layout>
-  <header class="absolute top-0 left-0 right-0 z-20 text-ivory">
-    <div class="flex items-center justify-between px-6 py-6 md:px-10">
-      <a href="/" class="font-serif text-2xl tracking-[0.28em] text-ivory">HALDEN</a>
-      <nav class="flex gap-8 text-[11px] uppercase tracking-[0.22em] font-light">
-        <a href="#lookbook" class="hover:opacity-70">Lookbook</a>
-        <a href="#house" class="hover:opacity-70">The House</a>
-        <a href="#contact" class="hover:opacity-70">Contact</a>
-      </nav>
-    </div>
+  <a class="skip" href="#cut">Skip to process</a>
+
+  <header class="mast">
+    <a class="mark" href="#top">HALDEN</a>
+    <nav class="files" aria-label="House file">
+      <a class="file" href="#top" data-file="in">In</a>
+      <a class="file" href="#cut" data-file="cut">Cut</a>
+      <a class="file" href="#worn" data-file="worn">Worn</a>
+      <a class="file" href="#line" data-file="line">Line</a>
+      <a class="file" href="#said" data-file="house">House</a>
+    </nav>
+    <a class="mast-write" href="#house">Write to the house</a>
   </header>
 
-  <section aria-label="Autumn twenty-six" class="bg-charcoal">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-[3px]">
-      <figure class="m-0">
-        <img src="/hero-cuff.png" alt="Folding a shirt cuff under a charcoal jacket" class="block h-[92vh] w-full object-cover object-center" />
-      </figure>
-      <figure class="m-0">
-        <img src="/hero-coat.png" alt="Long camel overcoat with a charcoal scarf" class="block h-[92vh] w-full object-cover object-center" />
-      </figure>
-      <figure class="m-0">
-        <img src="/hero-collar.png" alt="Straightening a white shirt collar" class="block h-[92vh] w-full object-cover object-center" />
-      </figure>
-    </div>
-    <p class="py-5 text-center text-[11px] uppercase tracking-[0.32em] text-ivory/80">Autumn twenty-six</p>
+  <section id="top" class="hero" data-file="in" aria-label="HALDEN">
+    <figure class="print pin coat">
+      <img
+        src="/hero-coat.png"
+        alt="Long camel overcoat with a charcoal scarf"
+        fetchpriority="high"
+        decoding="async"
+      />
+      <figcaption>
+        <h1>Come in as you are.</h1>
+      </figcaption>
+    </figure>
+    <figure class="print cuff">
+      <img src="/hero-cuff.png" alt="Folding a shirt cuff under a charcoal jacket" loading="lazy" />
+      <figcaption>Walk out dressed.</figcaption>
+    </figure>
+    <figure class="print collar">
+      <img src="/hero-collar.png" alt="Straightening a white shirt collar" loading="lazy" />
+    </figure>
   </section>
 
-  <section id="lookbook" class="px-6 py-24 md:px-10 md:py-32">
-    <div class="mb-14 flex items-end justify-between">
-      <h2 class="font-serif text-4xl md:text-5xl font-medium">Lookbook</h2>
-      <p class="hidden md:block max-w-xs text-right text-[12px] leading-relaxed tracking-wide text-charcoal/70">Four pieces. Nothing extra.</p>
+  <section id="cut" class="process" data-file="cut" data-beat="measure" aria-label="Process">
+    <div class="process-bg" aria-hidden="true">
+      <img class="bg is-on" data-for="measure" src="/room-cut.jpg" alt="" />
+      <img class="bg" data-for="cut" src="/line-table.jpg" alt="" loading="lazy" />
+      <img class="bg" data-for="canvas" src="/look-camel.png" alt="" loading="lazy" />
+      <img class="bg" data-for="press" src="/result-close.jpg" alt="" loading="lazy" />
     </div>
-    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      <li>
-        <img src="/look-navy.png" alt="Navy wool two-piece" class="aspect-[3/4] w-full object-cover" />
-        <p class="mt-4 text-[13px]">Navy wool two-piece</p>
-        <p class="mt-1 text-[12px] text-charcoal/60">Super 120s, unlined jacket</p>
-      </li>
-      <li>
-        <img src="/look-camel.png" alt="Camel overcoat" class="aspect-[3/4] w-full object-cover" />
-        <p class="mt-4 text-[13px]">Camel overcoat</p>
-        <p class="mt-1 text-[12px] text-charcoal/60">Wool-cashmere, horn buttons</p>
-      </li>
-      <li>
-        <img src="/look-ivory.png" alt="Ivory merino rollneck" class="aspect-[3/4] w-full object-cover" />
-        <p class="mt-4 text-[13px]">Ivory merino</p>
-        <p class="mt-1 text-[12px] text-charcoal/60">Fine-gauge rollneck</p>
-      </li>
-      <li>
-        <img src="/look-oxfords.png" alt="Black cap-toe oxfords" class="aspect-[3/4] w-full object-cover" />
-        <p class="mt-4 text-[13px]">Cap-toe oxford</p>
-        <p class="mt-1 text-[12px] text-charcoal/60">Black calf, closed lacing</p>
-      </li>
-    </ul>
-  </section>
-
-  <section id="house" class="px-6 py-8 md:px-10 md:py-16">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 border-t border-charcoal/15 pt-16 md:pt-24">
-      <h2 class="font-serif text-4xl md:text-5xl font-medium md:col-span-4">The House</h2>
-      <div class="md:col-span-7 md:col-start-6 max-w-xl">
-        <p class="text-[17px] leading-[1.7] font-light">HALDEN is a small house for men who dress once and mean it. Cut, cloth, carriage.</p>
-        <p class="mt-6 text-[17px] leading-[1.7] font-light text-charcoal/75">Autumn twenty-six is the first collection we are willing to put a name on.</p>
-      </div>
+    <div class="process-sheet">
+      <article class="beat beat-measure" data-beat="measure">
+        <h2>MEASURE</h2>
+        <p class="write">We measure you in the room. Shoulder, chest, waist, sleeve, seat. Inches and centimetres. Both.</p>
+      </article>
+      <article class="beat beat-cut" data-beat="cut">
+        <h2>CUT</h2>
+        <p class="write">Navy Super 120s on the table. We cut the jacket from those measures. The coat waits.</p>
+      </article>
+      <article class="beat beat-canvas" data-beat="canvas">
+        <h2>CANVAS</h2>
+        <p class="write">Horsehair sits inside the chest. You do not see it. The jacket does not fold when you sit.</p>
+      </article>
+      <article class="beat beat-press" data-beat="press">
+        <h2>PRESS</h2>
+        <p class="write">We press the lapel over a block. It still rolls after a full day. A bag crush takes that work out.</p>
+      </article>
     </div>
   </section>
 
-    <footer id="contact" class="relative mt-24 overflow-hidden bg-charcoal text-ivory">
-    <p class="pointer-events-none select-none absolute inset-x-0 top-4 font-serif text-[18vw] leading-none text-ivory/10 tracking-[0.14em] text-center">HALDEN</p>
-    <svg class="pointer-events-none absolute bottom-8 left-0 w-full h-28 text-ivory/20" viewBox="0 0 1200 140" fill="none" stroke="currentColor" aria-hidden="true">
-      <line x1="48" y1="24" x2="1152" y2="24" stroke-width="1.2" />
-      <path stroke-width="1.2" d="M200 24v18l-28 36h56l-28-36" />
-      <path stroke-width="1.2" d="M400 24v18l-28 36h56l-28-36" />
-      <path stroke-width="1.2" d="M600 24v18l-28 36h56l-28-36" />
-      <path stroke-width="1.2" d="M800 24v18l-28 36h56l-28-36" />
-      <path stroke-width="1.2" d="M1000 24v18l-28 36h56l-28-36" />
-      <path stroke-width="1" d="M172 78v36M228 78v40M372 78v32M428 78v38M572 78v36M628 78v42M772 78v34M828 78v40M972 78v38M1028 78v32" />
-    </svg>
-    <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 px-6 pt-20 pb-32 md:px-10">
-      <a href="#lookbook" class="block">
-        <p class="text-[12px] tracking-[0.18em] uppercase">Lookbook</p>
-        <p class="mt-2 text-[12px] text-ivory/55">The four pieces</p>
-      </a>
-      <a href="#house" class="block">
-        <p class="text-[12px] tracking-[0.18em] uppercase">The House</p>
-        <p class="mt-2 text-[12px] text-ivory/55">Cut, cloth, carriage</p>
-      </a>
-      <div>
-        <p class="text-[12px] tracking-[0.18em] uppercase">Atelier</p>
-        <p class="mt-2 text-[12px] text-ivory/55">By appointment</p>
-      </div>
-      <div>
-        <p class="text-[12px] tracking-[0.18em] uppercase">Contact</p>
-        <p class="mt-2 text-[12px] text-ivory/55">house@halden.co</p>
+  <section id="worn" class="wall worn" data-file="worn" aria-label="Worn">
+    <figure class="print bleed worn-walk">
+      <img src="/result-worn.jpg" alt="Navy coat on a wet street" loading="lazy" />
+      <figcaption>After rain. Not after a fitting.</figcaption>
+    </figure>
+  </section>
+
+  <section id="line" class="line" data-file="line" aria-label="The line">
+    <div class="rail">
+      <div class="rail-track">
+        {rail.concat(rail).map((item, i) => (
+          <figure class="rail-item" aria-hidden={i >= rail.length ? 'true' : undefined}>
+            <img src={item.src} alt={i >= rail.length ? '' : item.alt} width={item.w} height={item.h} loading="lazy" />
+            <figcaption>
+              <span>{item.name}</span>
+              <span>{item.cloth}</span>
+            </figcaption>
+          </figure>
+        ))}
       </div>
     </div>
-    <div class="relative z-10 flex items-center justify-between px-6 py-5 md:px-10 text-[11px] tracking-wide text-ivory/40 border-t border-ivory/10">
-      <p>Copyright 2026 HALDEN</p>
-      <p class="font-serif tracking-[0.28em] text-ivory/70">HALDEN</p>
+    <div class="life">
+      <figure class="life-room">
+        <img src="/life-room.jpg" alt="Navy coat in a wood room, a woman standing beside him" loading="lazy" />
+        <figcaption>This has to work at a table, not only in a mirror.</figcaption>
+      </figure>
+      <figure class="life-card life-wrist">
+        <img src="/life-wrist.jpg" alt="Cuff, watch, and glass" loading="lazy" />
+        <figcaption>Watch you own</figcaption>
+      </figure>
+      <figure class="life-card life-shoes">
+        <img src="/life-shoes.jpg" alt="Oxfords on a wooden floor" loading="lazy" />
+        <figcaption>Oxford · Calf</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="said" class="said" data-file="house" aria-label="What they wrote">
+    <div class="letters">
+      <blockquote class="quote q-keane">
+        <p>I put the navy jacket on to go down for the paper, which is not an occasion. I am 58. High-street jackets start chewing the back of my neck before I have finished a mug. This one has not. I can reach the kettle and the back stays put. I have worn it four mornings this week.</p>
+        <footer>James Keane</footer>
+      </blockquote>
+      <blockquote class="quote q-ward">
+        <p>I asked for a coat that met the shoe. I am 5 ft 11, and ready-made coats either bury the wrist or leave a gap over the sock. The camel one meets the shoe. I wore it over the knit to a lunch in town. Nobody asked who made it. I just felt dressed, which is the thing I had been missing.</p>
+        <footer>Eliot Ward</footer>
+      </blockquote>
+    </div>
+    <div class="said-wall">
+      <figure class="print said-kitchen">
+        <img src="/said-kitchen.jpg" alt="Older man in navy in a morning kitchen" loading="lazy" />
+      </figure>
+      <figure class="print pin said-window">
+        <img src="/said-window.jpg" alt="Man in camel at a daylight window" loading="lazy" />
+      </figure>
+    </div>
+  </section>
+
+  <section id="ask" class="ask" data-file="house" aria-label="Ask">
+    <details name="ask" open>
+      <summary>What do I need for a first year?</summary>
+      <p>A jacket, a coat, a knit, and a pair of shoes. Wear them until they feel like yours. If you still want more after that, write to us. We will not load you with another piece on day one.</p>
+    </details>
+    <details name="ask">
+      <summary>I have not dressed this way. Where do I start?</summary>
+      <p>Write to the house. We start with a talk and a full set of measures. The navy jacket is usually first. You do not have to know cloth when you arrive.</p>
+    </details>
+    <details name="ask">
+      <summary>How do I keep it?</summary>
+      <p>Brush it after you wear it. Hang it on a shaped hanger. Do not crush the chest in a bag. If the lapel goes flat, send it back and we will press the roll in again.</p>
+    </details>
+    <details name="ask">
+      <summary>Where is the house?</summary>
+      <p>6 Ravelton Yard, Huddersfield. Write to house@halden.co. We will tell you when to come.</p>
+    </details>
+  </section>
+
+  <footer id="house" class="house" data-file="house" aria-label="House">
+    <img src="/footer-men.jpg" alt="Three men against a brick wall" loading="lazy" />
+    <div class="house-copy">
+      <p class="mark">HALDEN</p>
+      <p>6 Ravelton Yard, Huddersfield</p>
+      <p class="claim">If this is already yours, write.</p>
+      <a class="cta" href="mailto:house@halden.co">Write to the house</a>
     </div>
   </footer>
-
 </Layout>
+
+<script>
+  const processBlock = document.getElementById('cut');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const beats = processBlock ? processBlock.querySelectorAll('.beat[data-beat]') : [];
+  const bgs = processBlock ? processBlock.querySelectorAll('.process-bg .bg') : [];
+
+  const showBeat = (name) => {
+    if (!processBlock || !name || processBlock.dataset.beat === name) return;
+    processBlock.dataset.beat = name;
+    bgs.forEach((img) => img.classList.toggle('is-on', img.dataset.for === name));
+  };
+
+  const pickBeat = () => {
+    if (!beats.length) return;
+    const line = window.innerHeight * 0.42;
+    let active = null;
+    beats.forEach((beat) => {
+      const box = beat.getBoundingClientRect();
+      if (box.top <= line && box.bottom > line) active = beat;
+    });
+    if (active) showBeat(active.dataset.beat);
+  };
+
+  if (processBlock && 'IntersectionObserver' in window) {
+    if (!reduce) processBlock.classList.add('will-write');
+    const written = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            processBlock.classList.add('is-written');
+            written.disconnect();
+          }
+        }
+      },
+      { threshold: 0.12 }
+    );
+    written.observe(processBlock);
+
+    pickBeat();
+    window.addEventListener('scroll', pickBeat, { passive: true });
+    window.addEventListener('resize', pickBeat);
+  }
+
+  const asks = document.querySelectorAll('#ask details');
+  asks.forEach((item) => {
+    item.addEventListener('toggle', () => {
+      if (!item.open) return;
+      asks.forEach((other) => {
+        if (other !== item) other.open = false;
+      });
+    });
+  });
+
+  const fileMarks = document.querySelectorAll('.file');
+  const fileSections = document.querySelectorAll('[data-file]');
+  const setFile = (name) => {
+    fileMarks.forEach((el) => el.classList.toggle('is-now', el.dataset.file === name));
+  };
+  setFile('in');
+  if ('IntersectionObserver' in window && fileSections.length) {
+    const fileWatch = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setFile(visible.target.dataset.file);
+      },
+      { threshold: [0.2, 0.4, 0.6], rootMargin: '-10% 0px -45% 0px' }
+    );
+    fileSections.forEach((el) => fileWatch.observe(el));
+  }
+
+  const worn = document.getElementById('worn');
+  const railEl = document.querySelector('.rail');
+  const lifeEl = document.querySelector('.life');
+  const syncRail = () => {
+    if (!worn || !railEl || !lifeEl || reduce) return;
+    const wornBottom = worn.getBoundingClientRect().bottom;
+    const lifeTop = lifeEl.getBoundingClientRect().top;
+    const run = wornBottom < window.innerHeight && lifeTop >= window.innerHeight - 1;
+    railEl.classList.toggle('is-run', run);
+  };
+  syncRail();
+  window.addEventListener('scroll', syncRail, { passive: true });
+  window.addEventListener('resize', syncRail);
+</script>
+
+<style>
+  :root {
+    --ground: #1B1710;
+    --ink: #F2E6A6;
+    --accent: #E3B505;
+    --mute: #9A8B4A;
+    --pad: clamp(1.1rem, 4.5vw, 4rem);
+    --display: Syne, sans-serif;
+    --body: Manrope, sans-serif;
+  }
+
+  .skip {
+    position: absolute;
+    left: 0.75rem;
+    top: -4rem;
+    z-index: 30;
+    padding: 0.4rem 0.7rem;
+    background: var(--accent);
+    color: var(--ground);
+    font-family: var(--body);
+    font-size: 0.9rem;
+  }
+
+  .skip:focus {
+    top: 0.75rem;
+  }
+
+  .mast {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    height: 3.25rem;
+    padding: 0 var(--pad);
+    background: color-mix(in srgb, var(--ground) 88%, transparent);
+  }
+
+  .mark {
+    font-family: var(--display);
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    text-transform: uppercase;
+    flex: 0 0 auto;
+  }
+
+  .files {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(0.55rem, 1.6vw, 1.1rem);
+    min-width: 0;
+  }
+
+  .file {
+    font-family: var(--body);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--mute);
+  }
+
+  .file.is-now {
+    color: var(--accent);
+    animation: fileblink 1.05s step-end infinite;
+  }
+
+  @keyframes fileblink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0.22; }
+  }
+
+  .mast-write {
+    font-family: var(--body);
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-decoration: none;
+    flex: 0 0 auto;
+  }
+
+  .note,
+  .write,
+  .quote,
+  .ask p,
+  .house-copy p,
+  .beat-copy p {
+    margin: 0;
+    font-family: var(--body);
+    font-size: clamp(0.95rem, 1.15vw, 1.08rem);
+    font-weight: 500;
+    line-height: 1.45;
+    max-width: 34rem;
+  }
+
+  .print {
+    position: relative;
+    margin: 0;
+    box-shadow: 0 18px 48px rgb(0 0 0 / 0.38);
+  }
+
+  .print.pin::after {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: 18%;
+    width: 28px;
+    height: 14px;
+    background: color-mix(in srgb, var(--ink) 55%, #8a7a4a);
+    transform: rotate(-8deg);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.25);
+  }
+
+  .coat.pin::after { width: 38px; height: 16px; left: 11%; transform: rotate(-13deg); }
+  .cuff.pin::after { width: 20px; height: 11px; left: 62%; top: -5px; transform: rotate(16deg); }
+  .collar.pin::after { width: 16px; height: 18px; left: 44%; transform: rotate(-4deg); background: color-mix(in srgb, var(--ink) 35%, #6e5f38); }
+  .life-room.pin::after { width: 44px; height: 13px; left: 7%; transform: rotate(-6deg); }
+  .said-window.pin::after { width: 22px; height: 15px; left: 58%; transform: rotate(11deg); }
+  .said-kitchen.pin::after { width: 32px; height: 12px; left: 24%; transform: rotate(-9deg); }
+
+  .print.bleed::after {
+    display: none;
+  }
+
+  .print img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .print:has(> figcaption)::before {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 44%;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(transparent, rgb(27 23 16 / 0.82));
+  }
+
+  .print > figcaption {
+    position: absolute;
+    left: 0.8rem;
+    right: 0.8rem;
+    bottom: 0.75rem;
+    z-index: 2;
+    margin: 0;
+    font-family: var(--display);
+    font-size: clamp(1.2rem, 2.1vw, 1.85rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    pointer-events: none;
+  }
+
+  .print > figcaption h1 {
+    margin: 0;
+    font: inherit;
+    font-size: inherit;
+  }
+
+  .cuff > figcaption,
+  .life-wrist > figcaption {
+    font-size: clamp(0.95rem, 1.35vw, 1.15rem);
+  }
+
+  /* HERO: wall of prints on empty ground */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    background: var(--ground);
+  }
+
+  .hero .coat {
+    position: absolute;
+    left: 5%;
+    top: 11%;
+    width: min(46vw, 38rem);
+    height: min(78svh, 46rem);
+    transform: rotate(-1.6deg);
+  }
+
+  .hero .cuff {
+    position: absolute;
+    right: 9%;
+    top: 16%;
+    width: min(22vw, 18rem);
+    height: min(28vh, 16rem);
+    transform: rotate(2.8deg);
+    z-index: 2;
+  }
+
+  .hero .collar {
+    position: absolute;
+    right: 16%;
+    bottom: 11%;
+    width: min(24vw, 20rem);
+    height: min(30vh, 18rem);
+    transform: rotate(-2.2deg);
+  }
+
+  .coat > figcaption {
+    left: 7%;
+    right: 10%;
+    bottom: 8%;
+  }
+
+  /* PROCESS: blueprint over a slow mill room */
+  .process {
+    position: relative;
+    background: var(--ground);
+  }
+
+  .process-bg {
+    position: sticky;
+    top: 0;
+    height: 100svh;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .process-bg .bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 42%;
+    opacity: 0;
+    transition: opacity 0.55s ease;
+  }
+
+  .process-bg .bg.is-on {
+    opacity: 1;
+  }
+
+  .process-bg .bg[data-for="cut"] {
+    object-position: 40% 40%;
+  }
+
+  .process-bg .bg[data-for="canvas"] {
+    object-position: 62% 28%;
+  }
+
+  .process-bg .bg[data-for="press"] {
+    object-position: 50% 18%;
+  }
+
+  .process-bg::before,
+  .process-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .process-bg::before {
+    z-index: 1;
+    background-image:
+      repeating-linear-gradient(90deg, transparent 0 80px, rgb(227 181 5 / 0.05) 80px 81px),
+      repeating-linear-gradient(0deg, transparent 0 80px, rgb(227 181 5 / 0.045) 80px 81px);
+  }
+
+  .process-bg::after {
+    z-index: 2;
+    background: color-mix(in srgb, var(--ground) 38%, transparent);
+  }
+
+  .process-sheet {
+    position: relative;
+    z-index: 1;
+    margin-top: -100svh;
+    padding: 8vh var(--pad) 12vh;
+  }
+
+  .beat {
+    position: relative;
+    min-height: 88svh;
+    display: grid;
+    align-content: center;
+    gap: 1.25rem;
+  }
+
+  .beat h2 {
+    margin: 0;
+    font-family: var(--display);
+    font-size: clamp(2.1rem, 4.2vw, 3.4rem);
+    font-weight: 800;
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+
+  .plate {
+    margin: 0;
+    border: 1px solid rgb(227 181 5 / 0.45);
+    box-shadow: none;
+  }
+
+  .plate::after {
+    display: none;
+  }
+
+  .plate img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .beat-measure {
+    align-content: center;
+  }
+
+  .beat-measure h2 {
+    font-size: clamp(2.8rem, 6.2vw, 5.2rem);
+  }
+
+  .beat-cut {
+    align-content: start;
+    padding-top: 10vh;
+  }
+
+  .beat-cut h2,
+  .beat-press h2 {
+    font-size: clamp(1.35rem, 2.1vw, 1.85rem);
+    letter-spacing: 0.14em;
+  }
+
+  .beat-canvas {
+    align-content: end;
+    padding-bottom: 10vh;
+  }
+
+  .beat-canvas h2 {
+    font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+  }
+
+  .beat-press {
+    align-content: start;
+    padding-top: 12vh;
+    justify-items: end;
+  }
+
+  .beat-press h2,
+  .beat-press .write {
+    text-align: right;
+  }
+
+  .callout {
+    position: absolute;
+    font-family: var(--body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: lowercase;
+    color: var(--accent);
+    padding-bottom: 0.15rem;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+
+  .callout::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .callout::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    background: var(--accent);
+    transform-origin: top left;
+  }
+
+  .c1 {
+    top: 14%;
+    left: 46%;
+  }
+
+  .c1::before {
+    top: 100%;
+    left: 40%;
+    height: 5.2rem;
+    transform: rotate(28deg);
+  }
+
+  .c2 {
+    top: 10%;
+    left: 84%;
+  }
+
+  .c2::before {
+    top: 100%;
+    left: 70%;
+    height: 2.6rem;
+    transform: rotate(22deg);
+  }
+
+  .c-waist {
+    top: auto;
+    bottom: 20%;
+    left: 58%;
+  }
+
+  .c-waist::before {
+    bottom: 100%;
+    left: 40%;
+    height: 4.2rem;
+    transform: rotate(-8deg);
+    transform-origin: bottom left;
+  }
+
+  .process[data-beat="measure"] .c1,
+  .process[data-beat="measure"] .c2,
+  .process[data-beat="measure"] .c-waist {
+    opacity: 1;
+  }
+
+  .will-write .write {
+    opacity: 0;
+  }
+
+  .is-written .write {
+    animation: write 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .is-written .beat-cut .write { animation-delay: 0.08s; }
+  .is-written .beat-canvas .write { animation-delay: 0.16s; }
+  .is-written .beat-press .write { animation-delay: 0.24s; }
+
+  @keyframes write {
+    from {
+      opacity: 0;
+      clip-path: inset(0 100% 0 0);
+    }
+    to {
+      opacity: 1;
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  /* WORN wall */
+  .wall {
+    position: relative;
+    min-height: 100svh;
+    background: var(--ground);
+    overflow: hidden;
+  }
+
+  .worn {
+    min-height: 100svh;
+  }
+
+  .worn-walk {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    overflow: hidden;
+    box-shadow: none;
+  }
+
+  .worn-walk img {
+    object-fit: cover;
+    object-position: 55% 22%;
+    transform: scale(1.28);
+    filter: sepia(0.42) saturate(0.5) hue-rotate(-8deg) contrast(1.06);
+  }
+
+  .worn-walk > figcaption {
+    left: var(--pad);
+    right: auto;
+    bottom: 10%;
+    max-width: 16rem;
+    font-size: clamp(1.4rem, 2.4vw, 2rem);
+  }
+
+  /* LINE: rail then life wall */
+  .line {
+    background: var(--ground);
+    padding-bottom: 8vh;
+  }
+
+  .rail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100svh;
+    overflow: hidden;
+  }
+
+  .rail-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    padding: 1.4rem 0 2rem;
+    animation: rail-loop 48s linear infinite;
+    animation-play-state: paused;
+  }
+
+  .rail.is-run .rail-track {
+    animation-play-state: running;
+  }
+
+  .rail-item {
+    position: relative;
+    z-index: 1;
+    margin: 0 -0.65rem 0 0;
+    flex: 0 0 auto;
+    width: clamp(9rem, 16vw, 15rem);
+    background: #efe6c4;
+    padding: 0.55rem 0.55rem 0.65rem;
+    box-shadow: 0 16px 34px rgb(0 0 0 / 0.42);
+  }
+
+  .rail-item:nth-child(7n + 1) { width: clamp(11rem, 20vw, 17rem); transform: rotate(-2.1deg) translateY(0.35rem); z-index: 2; }
+  .rail-item:nth-child(7n + 2) { width: clamp(8rem, 14vw, 12rem); transform: rotate(3.1deg) translateY(-1.05rem); z-index: 3; }
+  .rail-item:nth-child(7n + 3) { width: clamp(11rem, 19vw, 16.5rem); transform: rotate(1.5deg) translateY(-0.25rem); z-index: 4; }
+  .rail-item:nth-child(7n + 4) { width: clamp(8.5rem, 15vw, 13rem); transform: rotate(-2.7deg) translateY(1.15rem); z-index: 5; }
+  .rail-item:nth-child(7n + 5) { width: clamp(10rem, 18vw, 15rem); transform: rotate(0.8deg) translateY(-0.55rem); z-index: 6; }
+  .rail-item:nth-child(7n + 6) { width: clamp(7rem, 12vw, 10.5rem); transform: rotate(3.8deg) translateY(0.15rem); z-index: 7; }
+  .rail-item:nth-child(7n + 7) { width: clamp(7rem, 12vw, 10.5rem); transform: rotate(-3.3deg) translateY(-0.9rem); z-index: 8; }
+
+  .rail-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: sepia(0.18) saturate(0.85);
+  }
+
+  .rail-item figcaption {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.08rem;
+    margin: 0.45rem 0.1rem 0;
+    font-family: var(--body);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #1b1710;
+  }
+
+  .rail-item figcaption span:last-child {
+    font-weight: 600;
+    opacity: 0.72;
+  }
+
+  @keyframes rail-loop {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .life {
+    position: relative;
+    min-height: 100svh;
+    margin-top: 4vh;
+  }
+
+  .life-room {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: min(62vw, 52rem);
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .life-room img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 40% 30%;
+  }
+
+  .life-room::before {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 42%;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(transparent, rgb(27 23 16 / 0.82));
+  }
+
+  .life-room > figcaption {
+    position: absolute;
+    left: var(--pad);
+    right: 18%;
+    bottom: 8%;
+    z-index: 2;
+    margin: 0;
+    max-width: 18rem;
+    font-family: var(--display);
+    font-size: clamp(1.2rem, 2.1vw, 1.85rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+
+  .life-card {
+    position: absolute;
+    margin: 0;
+    background: #efe6c4;
+    padding: 0.5rem 0.5rem 0.6rem;
+    box-shadow: 0 16px 34px rgb(0 0 0 / 0.42);
+    z-index: 2;
+  }
+
+  .life-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .life-card figcaption {
+    margin: 0.4rem 0.1rem 0;
+    font-family: var(--body);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #1b1710;
+  }
+
+  .life-wrist {
+    right: 6%;
+    top: 12%;
+    width: min(22vw, 17rem);
+  }
+
+  .life-shoes {
+    right: 10%;
+    bottom: 10%;
+    width: min(16vw, 13rem);
+  }
+
+  /* REVIEWS: letters, then the wall */
+  .said {
+    display: grid;
+    grid-template-columns: minmax(20rem, 34rem) minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    align-items: center;
+    min-height: 92svh;
+    padding: 8vh var(--pad);
+    background: var(--ground);
+  }
+
+  .letters {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  .said-wall {
+    position: relative;
+    min-height: 78svh;
+  }
+
+  .said-window {
+    position: absolute;
+    right: 0;
+    top: 4%;
+    width: 78%;
+    height: min(78vh, 44rem);
+    transform: rotate(1.2deg);
+  }
+
+  .said-kitchen {
+    position: absolute;
+    left: 2%;
+    bottom: 6%;
+    width: 46%;
+    height: min(42vh, 26rem);
+    transform: rotate(-2.4deg);
+    z-index: 2;
+  }
+
+  .quote {
+    max-width: none;
+  }
+
+  .quote p {
+    margin: 0;
+    max-width: 38rem;
+    font-size: clamp(1.05rem, 1.45vw, 1.28rem);
+    line-height: 1.5;
+  }
+
+  .quote footer {
+    margin-top: 0.55rem;
+    font-family: var(--body);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--mute);
+  }
+
+  /* ASK: exclusive accordion, no empty field */
+  .ask {
+    padding: 8vh var(--pad) 10vh;
+    max-width: 54rem;
+    background: var(--ground);
+  }
+
+  .ask details {
+    border-top: 1px solid rgb(154 139 74 / 0.45);
+  }
+
+  .ask details:last-child {
+    border-bottom: 1px solid rgb(154 139 74 / 0.45);
+  }
+
+  .ask summary {
+    display: flex;
+    align-items: center;
+    min-height: 3.25rem;
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--display);
+    font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .ask summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .ask p {
+    padding: 0 0 1.4rem;
+    color: var(--mute);
+  }
+
+  /* HOUSE */
+  .house {
+    position: relative;
+    min-height: 100svh;
+    overflow: hidden;
+    color: var(--ink);
+  }
+
+  .house img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 62% center;
+  }
+
+  .house::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgb(27 23 16 / 0.88) 8%, rgb(27 23 16 / 0.35) 42%, transparent 62%);
+    pointer-events: none;
+  }
+
+  .house-copy {
+    position: relative;
+    z-index: 1;
+    padding: clamp(2rem, 6vh, 4rem) var(--pad);
+    max-width: 28rem;
+  }
+
+  .house-copy .mark {
+    margin: 0 0 0.85rem;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+  }
+
+  .house-copy .claim {
+    margin-top: 0.9rem;
+    max-width: 18rem;
+    font-family: var(--display);
+    font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.6rem;
+    padding: 0 1.15rem;
+    margin-top: 1.35rem;
+    background: var(--accent);
+    color: var(--ground);
+    border: 1px solid #deaa04;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.14);
+    font-family: var(--body);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .cta:hover {
+    color: var(--ground);
+    filter: brightness(1.06);
+  }
+
+  .cta:active {
+    transform: translateY(1px);
+  }
+
+  @media (max-width: 767px) {
+    .mast-write {
+      display: none;
+    }
+
+    .files {
+      justify-content: flex-end;
+      gap: 0.5rem;
+    }
+
+    .file {
+      font-size: 0.68rem;
+    }
+
+    .hero {
+      min-height: 118svh;
+    }
+
+    .hero .coat {
+      left: 6%;
+      top: 11%;
+      width: 86%;
+      height: 48svh;
+    }
+
+    .hero .coat img {
+      object-position: 50% 12%;
+    }
+
+    .hero .cuff {
+      right: 8%;
+      top: auto;
+      bottom: 26%;
+      width: 42%;
+      height: 16svh;
+    }
+
+    .hero .collar {
+      left: 6%;
+      right: auto;
+      bottom: 5%;
+      width: 58%;
+      height: 30svh;
+    }
+
+    .hero .collar img {
+      aspect-ratio: auto;
+      height: 100%;
+      object-position: 50% 18%;
+    }
+
+    .coat > figcaption {
+      font-size: 1.35rem;
+    }
+
+    .cuff > figcaption {
+      font-size: 0.82rem;
+    }
+
+    .beat {
+      min-height: 100svh;
+      padding-bottom: 18vh;
+    }
+
+    .beat-press {
+      justify-items: start;
+    }
+
+    .beat-cut h2,
+    .beat-press h2,
+    .beat-cut .write,
+    .beat-press .write {
+      text-align: left;
+    }
+
+    .c1 { top: 12%; left: 38%; }
+    .c2 { top: 14%; left: 70%; }
+    .c-waist { left: 48%; bottom: 28%; }
+
+    .worn {
+      min-height: 92svh;
+    }
+
+    .worn-walk {
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .catalog-head {
+      padding-top: 3.6rem;
+    }
+
+    .life {
+      min-height: auto;
+      padding: 2rem var(--pad) 4rem;
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .print img {
+      height: auto;
+      aspect-ratio: 3 / 4;
+    }
+
+    .hero .collar img {
+      aspect-ratio: 4 / 5;
+    }
+
+    .life-room,
+    .life-wrist,
+    .life-shoes {
+      position: relative;
+      right: auto;
+      left: auto;
+      top: auto;
+      bottom: auto;
+      width: 100%;
+      height: auto;
+    }
+
+    .life-room {
+      height: min(72svh, 32rem);
+    }
+
+    .rail-item {
+      margin-right: -0.4rem;
+    }
+
+    .worn-walk img {
+      transform: none;
+      aspect-ratio: auto;
+      height: 100%;
+      filter: sepia(0.42) saturate(0.5) hue-rotate(-8deg) contrast(1.06);
+    }
+
+    .worn-walk > figcaption {
+      bottom: 8%;
+      max-width: 14rem;
+    }
+
+    .life-wrist { width: 78%; justify-self: end; }
+    .life-shoes { width: 62%; }
+
+    .said {
+      display: flex;
+      flex-direction: column;
+      min-height: auto;
+      gap: 1.5rem;
+      padding: 3rem var(--pad) 4rem;
+    }
+
+    .letters,
+    .said-wall {
+      display: contents;
+    }
+
+    .q-keane { order: 1; }
+    .said-kitchen { order: 2; }
+    .q-ward { order: 3; }
+    .said-window { order: 4; }
+
+    .said-window,
+    .said-kitchen {
+      position: relative;
+      left: auto;
+      right: auto;
+      top: auto;
+      bottom: auto;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 4;
+    }
+
+    .said-kitchen { width: 78%; transform: rotate(-1.8deg); }
+    .said-window { transform: rotate(1deg); }
+
+    .house {
+      min-height: 100svh;
+    }
+
+    .house::after {
+      background: linear-gradient(180deg, rgb(27 23 16 / 0.9) 0%, rgb(27 23 16 / 0.25) 42%, transparent 58%);
+    }
+
+    .house img {
+      object-position: 55% 20%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rail {
+      height: auto;
+      min-height: 56vh;
+    }
+
+    .rail-track {
+      animation: none;
+      transform: none;
+    }
+
+    .write,
+    .will-write .write,
+    .is-written .write {
+      opacity: 1;
+      animation: none;
+      clip-path: none;
+    }
+
+    .file.is-now {
+      animation: none;
+      opacity: 1;
+    }
+  }
+</style>

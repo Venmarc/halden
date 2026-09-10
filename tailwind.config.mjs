@@ -4,13 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        ivory: "#F4F0E8",
-        charcoal: "#1A1917",
-        camel: "#B68D5D",
+        ground: "#1B1710",
+        ink: "#F2E6A6",
+        accent: "#E3B505",
+        mute: "#9A8B4A",
       },
       fontFamily: {
-        serif: ["Cormorant Garamond", "Georgia", "serif"],
-        sans: ["Outfit", "system-ui", "sans-serif"],
+        display: ["Syne", "sans-serif"],
+        sans: ["Manrope", "sans-serif"],
       },
     },
   },

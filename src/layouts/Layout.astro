@@ -1,18 +1,70 @@
 ---
 const title = "HALDEN";
+const description = "HALDEN. Autumn twenty-six. 6 Ravelton Yard, Huddersfield.";
 ---
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HALDEN</title>
-  <meta name="description" content="HALDEN. A small house for men who dress once and mean it." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="theme-color" content="#1B1710" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
 </head>
-<body class="bg-ivory text-charcoal font-sans antialiased">
+<body class="font-sans antialiased">
+  <!--
+    THESIS: A Huddersfield house lookbook. Cutting-room wall plus one blueprint. Not a cream magazine.
+    OWN-WORLD: Ground #1B1710, ink #F2E6A6, sulfur #E3B505, mute #9A8B4A. Syne verbs. Manrope facts.
+    STORY: Process, then the clothes in a life, then the house.
+    FIRST VIEWPORT: Dark wall. Coat, cuff, collar taped off-grid. Mast only. No giant stamp.
+    FORM: Wall for life. Blueprint for process only. Scroll-linked rail. Exclusive accordion. One house close.
+  -->
   <slot />
+  <script>
+    import '../scripts/smooth-scroll.js';
+  </script>
 </body>
 </html>
+
+<style is:global>
+  html {
+    background: #1B1710;
+    color-scheme: dark;
+  }
+
+  html, body {
+    margin: 0;
+    min-height: 100%;
+    background: #1B1710;
+    color: #F2E6A6;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background: #E3B505;
+    color: #1B1710;
+  }
+
+  :focus-visible {
+    outline: 1px solid #F2E6A6;
+    outline-offset: 3px;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  button, summary {
+    font: inherit;
+    color: inherit;
+  }
+</style>
